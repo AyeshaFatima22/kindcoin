@@ -1,5 +1,5 @@
 import { useStateContext } from "../context"
-import CustomButton from "./CustomButton" // Using your existing CustomButton component
+import CustomButton from "./CustomButton"
 
 const CustomConnectWallet = () => {
   const { address, connectMetamask, disconnect } = useStateContext()
@@ -19,7 +19,11 @@ const CustomConnectWallet = () => {
     <CustomButton
       btnType="button"
       title={address ? `${address.substring(0, 6)}...${address.substring(address.length - 4)}` : "Connect Wallet"}
-      styles={address ? "bg-[#ff3333]" : "bg-[#03dac5]"}
+      styles={
+        address
+          ? "bg-red-400 hover:bg-red-500"
+          : "bg-pink-500 hover:bg-pink-600 dark:bg-purple-500 dark:hover:bg-purple-600"
+      }
       handleClick={handleWalletAction}
     />
   )
