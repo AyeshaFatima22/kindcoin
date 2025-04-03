@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useStateContext } from "../context"
@@ -44,15 +42,15 @@ const CreateCampaign = () => {
     })
   }
   return (
-    <div className=" bg-[#f2f2f2] dark:bg-[#1c1c24] flex justify-center items-center flex-col rounded-xl sm:p-10 p-4 shadow-md">
+    <div className="bg-white dark:bg-slate-800 flex justify-center items-center flex-col rounded-2xl sm:p-10 p-4 shadow-soft">
       {isLoading && <Loader />}
-      <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#e5e5e5] dark:bg-[#3a3a43] rounded-xl">
-        <h1 className="font-epilogue font-bold sm:text-[25px] text-lg leading-[38px] text-[#414A4C] dark:text-white">
+      <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-pink-50 dark:bg-purple-900 rounded-xl">
+        <h1 className="font-quicksand font-bold sm:text-[25px] text-lg leading-[38px] text-pink-600 dark:text-white">
           Start a Campaign
         </h1>
       </div>
       <form onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
-        <div className=" flex flex-wrap gap-[40px]">
+        <div className="flex flex-wrap gap-[40px]">
           <FormField
             labelName="Your Name *"
             placeholder="e.g. Kiran Mahajan"
@@ -86,9 +84,11 @@ const CreateCampaign = () => {
           handleChange={(e) => handleFormFieldChange("description", e)}
         />
 
-        <div className="w-full flex justify-center items-center p-4 bg-[#03dac5] h-[120px] rounded-xl ">
+        <div className="w-full flex justify-center items-center p-4 bg-pink-100 dark:bg-purple-900 h-[120px] rounded-xl">
           <img src={money || "/placeholder.svg"} alt="money" className="w-10 h-10 object-contain" />
-          <h4 className="font-epilogue font-bold text-[25px] text-white ml-5 ">You'll get 100% of the raised amount</h4>
+          <h4 className="font-quicksand font-bold text-[25px] text-pink-600 dark:text-white ml-5">
+            You'll get 100% of the raised amount
+          </h4>
         </div>
         <div className="flex flex-wrap gap-[40px]">
           <FormField
@@ -116,7 +116,11 @@ const CreateCampaign = () => {
           handleChange={(e) => handleFormFieldChange("image", e)}
         />
         <div className="flex justify-center items-center mt-[40px]">
-          <CustomButton btnType="submit" title="Submit New Campaign" styles="bg-[#6F01Ec] text-white" />
+          <CustomButton
+            btnType="submit"
+            title="Submit New Campaign"
+            styles="bg-pink-500 dark:bg-purple-500 hover:bg-pink-600 dark:hover:bg-purple-600"
+          />
         </div>
       </form>
     </div>
