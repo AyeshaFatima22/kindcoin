@@ -1,16 +1,15 @@
-import React from "react";
-
 const CountBox = ({ title = "", value = "" }) => {
   return (
-    <div className="flex flex-col items-center w-[150px] shadow-md">
-      <h4 className="font-epilogue font-bold text-[30px] text-black dark:text-white p-3 bg-[#f2f2f2] dark:bg-[#1c1c24] rounded-t-[10px] w-full text-center truncate">
+    <div className="flex flex-col items-center w-[150px] shadow-soft">
+      <h4 className="font-quicksand font-bold text-[30px] text-slate-800 dark:text-white p-3 bg-white dark:bg-slate-800 rounded-t-xl w-full text-center truncate">
         {value}
       </h4>
-      <p className="font-epilogue font-normal  text-[#4d4d4d] dark:text-[#808191] bg-[#dddddd] dark:bg-[#28282e] px-3 py-2 w-full rounded-b-[10px] text-center">
+      <p className="font-epilogue font-normal text-slate-600 dark:text-slate-300 bg-pink-50 dark:bg-purple-900 px-3 py-2 w-full rounded-b-xl text-center">
         {title}
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default CountBox;
+export default CountBox
+
