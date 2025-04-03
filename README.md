@@ -1,80 +1,130 @@
-# Blockchain-based crowdfunding platform: `FundVerse`
+# Blockchain-based Crowdfunding Platform: `KindCoin`
 
-**FundVerse** is a blockchain-based decentralized platform that combines social interactions with crowdfunding mechanisms, allowing any user to raise funds while becoming popular in the social network. Being **built over the Ethereum blockchain**, FundVerse is structured as a Decentralized Application **(DApp)**, that fosters crowdfunding without the intervention of any central authority,and recognizes the active role of donors, enabling them to support artists or projects as well as humanity use cases.
+**KindCoin** is a blockchain-based decentralized platform that allows users to raise funds without intermediaries. Built on the **Ethereum blockchain**, it operates as a **Decentralized Application (DApp)**, ensuring transparency and security in crowdfunding.
 
+## Why Blockchain-Based Crowdfunding?
 
-## Why blockchain based crowdfunding?
+- **Decentralization** – Eliminates the need for a central authority, reducing fees and increasing trust.
+- **Transparency** – All transactions are recorded on the blockchain, allowing contributors to verify campaign legitimacy.
+- **No Minimum Contribution** – Contributors can donate any amount.
+- **Security & Immutability** – Blockchain ensures that campaign data cannot be tampered with.
+- **Real-Time Monitoring** – Contributions and withdrawals can be tracked in real time.
 
-- Blockchain is a **decentralized ledger** that records network transactions securely and transparently hence contributors can determine how legitimate the campaign is?
-- There is **no minimum contribution requirement** i.e Contributors have the freedom to support campaigns with any amount they choose
--‌ Better **flexibility** and **accessibility** leads to **improved** reach of campaigns
-- Blockchain is **immutable** and support real time monitoring of data
--‌ Whereas, **DApps** are the applications that **run without downtime**, fraud, or any sort of regulations.
+## Technologies Utilized
 
+- **Backend** ( **web3/** folder): Solidity, Hardhat
+- **Frontend** ( **client/** folder): JavaScript, React.js, Tailwind CSS, Vite
+- **Development Tools**: Hardhat for smart contract development and deployment
 
-## Technologies Utilised:
+## Challenges Faced While Building
 
-- **Backend** ( **Web 3** folder ): Solidity
-- **Frontend** ( **Client** folder ): Javascript, React Js, Tailwind CSS,etc
-- We have used **Thirdweb** and **Hardhat** to create and deploy the dApp on **Sepolia testnet.**
+- Setting up and managing the **local Hardhat blockchain** for development
+- Debugging **smart contracts** and optimizing Solidity code
+- Ensuring **secure transactions** between users and campaign creators
 
-**Thirdweb** is a tool for creating, deploying, and managing dApps on the Ethereum blockchain and **hardhat** is a development environment for Ethereum smart contract development.
+## Installation & Setup
 
+To install and run KindCoin locally, follow these steps:
 
-## Challenges faced While Building this project:
+### **1️⃣ Clone the Repository**
+```bash
+https://github.com/AyeshaFatima22/kindcoin
+```
 
-Though there were many but some of the major challenges we faced while building this crowdfunding DApp are:
-- Migrating from Goerli testnet to Sepolia testnet
-- Integration of Sepolia test network with the Ethereum Blockchain
-- Keeping an eye on deprecated standards of web3 adding new functionality to the DApp
+### **2️⃣ Navigate to the Web3 Directory & Install Dependencies**
+```bash
+cd web3
+npm install
+```
 
-## How to Install and Run?
+### **3️⃣ Start the Hardhat Local Blockchain**
+```bash
+npx hardhat node
+```
 
-To Install and run this Blockchain based crowdfunding platform locally, one must follow all the steps mentioned below:
+### **4️⃣ Deploy the Smart Contract**
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-**Clone the repository:**
+### **5️⃣ Connect MetaMask to Hardhat Network**
+1. Open **MetaMask**
+2. Add a **custom RPC network**:
+   - **Network Name**: Hardhat
+   - **RPC URL**: `http://127.0.0.1:8545`
+   - **Chain ID**: `1337`
+3. Import a test account from the Hardhat terminal output
 
-         https://github.com/thekiranmahajan/FundVerse.git
+### **6️⃣ Navigate to the Client Directory & Install Dependencies**
+```bash
+cd ../client
+npm install
+```
 
-**Navigate to the web3 repository:**
+### **7️⃣ Start the Frontend**
+```bash
+npm run dev
+```
 
-         cd web3
+Open your browser and visit [http://localhost:5173](http://localhost:5173) to use the KindCoin platform.
 
-**Install required dependencies:**
+## How to Use KindCoin?
 
-         npm install
+To interact with KindCoin, you need the **MetaMask** extension installed on your browser. You can download it from [here](https://metamask.io/download/).
 
-**Navigate to the client repository:**
+- **Create a Campaign** – Set a goal and duration for your fundraising.
+- **Donate ETH** – Support campaigns using MetaMask.
+- **Withdraw Funds** – Campaign creators can withdraw funds if their target is met.
 
-         cd client
+## Directory Structure
 
-**Install required dependencies:**
+```
+📂 kindcoin/
+ ├── 📄 README.md             # Documentation
+ ├── 📂 client/               # Frontend application
+ │   ├── 📄 README.md
+ │   ├── 📄 index.html
+ │   ├── 📄 LICENSE.md
+ │   ├── 📄 package.json
+ │   ├── 📄 tailwind.config.js
+ │   ├── 📄 vite.config.js
+ │   ├── 📄 .gitignore
+ │   ├── 📄 .env
+ │   ├── 📂 src/
+ │   │   ├── App.jsx
+ │   │   ├── index.css
+ │   │   ├── main.jsx
+ │   │   ├── 📂 assets/
+ │   │   ├── 📂 components/
+ │   │   ├── 📂 constants/
+ │   │   ├── 📂 context/
+ │   │   ├── 📂 pages/
+ │   │   └── 📂 utils/
+ ├── 📂 web3/                 # Smart contract code
+ │   ├── 📄 README.md
+ │   ├── 📄 hardhat.config.js  # Hardhat configuration
+ │   ├── 📄 package.json
+ │   ├── 📂 contracts/
+ │   │   ├── CrowdFunding.sol  # Smart contract
+ │   ├── 📂 scripts/
+ │   │   ├── deploy.js         # Deployment script
+ │   ├── 📂 artifacts/
+ │   ├── 📂 cache/
+ │   ├── 📂 test/              # Smart contract tests (if added)
+```
 
-         npm install
+## Future Enhancements
 
-**Start the development server:**
+- **UI Improvements** – Enhance campaign creation and contribution experience.
+- **IPFS Integration** – Store campaign data in a decentralized manner.
+- **Multi-Chain Deployment** – Expand to Polygon, Binance Smart Chain, etc.
+- **NFT-based Rewards** – Incentivize contributors with digital assets.
 
-         npm run dev
+## Contributors
 
-Open your browser and visit http://localhost:5173 to view the user interface of the crowdfunding platform.
+1. [Ayesha Fatima](https://github.com/AyeshaFatima22)
 
-## How to Use?
+## License
 
-To use this DApp user must have an extension called [Metamask](https://metamask.io/download/), this is a web browser extension, you can install it on Firefox, Chrome, Opera,etc.
+This project is licensed under the **MIT License**.
 
-
-## Additional Features: 
-   
-- The website offers Interactive forms so that contributors and campaign designers can both easily create and pool campaigns. 
-- These forms also Allow for donation and request approval.
-- The platform allows users to track the amount raised and days left for each campaign whereas, it includes functionality to track and display the number of donations made to a specific campaign, providing transparency and accountability.
-- The ability to track the progress of campaign creation and view multiple campaign cards created by different users adds transparency and visibility to the crowdfunding platform.
-
-## Credits:
-
-https://github.com/adrianhajdin/project_crowdfunding
-
-## Contributor:
-
-1.	https://github.com/thekiranmahajan
-2.	https://github.com/thesakshijaiswal
