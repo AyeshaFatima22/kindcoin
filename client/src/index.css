@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pink-50 dark:bg-slate-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-quicksand;
+  }
+}
 
 @layer utilities {
   input[type="number"]::-webkit-inner-spin-button,
@@ -29,17 +45,67 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #1c1c2169;
+    background: #f8e1eb69;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #3f334b;
-    border-radius: 5px;
+    background: #e68bb3;
+    border-radius: 10px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #7d6af0;
+    background: #d670a1;
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 15px rgba(219, 154, 188, 0.15);
+  }
+
+  .button-shadow {
+    box-shadow: 0 4px 10px rgba(219, 154, 188, 0.25);
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-pink-300 focus:border-pink-300 dark:focus:ring-purple-400 dark:focus:border-purple-400;
   }
 }
+
+/* Custom theme classes */
+.theme-primary {
+  @apply bg-pink-500 text-white hover:bg-pink-600 dark:bg-purple-500 dark:hover:bg-purple-600;
+}
+
+.theme-secondary {
+  @apply bg-rose-100 text-rose-700 hover:bg-rose-200 dark:bg-purple-200 dark:text-purple-800 dark:hover:bg-purple-300;
+}
+
+.theme-accent {
+  @apply bg-teal-400 text-white hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-600;
+}
+
+.theme-danger {
+  @apply bg-red-400 text-white hover:bg-red-500;
+}
+
+.theme-card {
+  @apply bg-white dark:bg-slate-800 rounded-2xl card-shadow;
+}
+
+.theme-border {
+  @apply border border-pink-200 dark:border-purple-800;
+}
+
+.theme-text-primary {
+  @apply text-slate-800 dark:text-white;
+}
+
+.theme-text-secondary {
+  @apply text-slate-600 dark:text-slate-300;
+}
+
+.theme-text-muted {
+  @apply text-slate-500 dark:text-slate-400;
+}
+
