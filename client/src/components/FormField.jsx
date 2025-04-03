@@ -1,20 +1,12 @@
-import React from "react";
+"use client"
 
-const FormField = ({
-  labelName,
-  placeholder,
-  inputType,
-  isTextArea,
-  isCategory,
-  value,
-  handleChange,
-}) => {
+const FormField = ({ labelName, placeholder, inputType, isTextArea, isCategory, value, handleChange }) => {
   return (
     <label className="flex-1 w-full flex flex-col">
       {labelName && (
         <span
-          className="font-epilogue font-medium text-sm
-             leading-[22px] text-[#4d4d4d] dark:text-[#808191]  mb-[10px]"
+          className="font-quicksand font-medium text-sm
+             leading-[22px] text-slate-600 dark:text-slate-300 mb-[10px]"
         >
           {labelName}
         </span>
@@ -27,15 +19,14 @@ const FormField = ({
           type={inputType}
           rows={10}
           placeholder={placeholder}
-          className=" py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#8b8b8b] dark:border-[#3a3a43] bg-transparent font-epilogue  dark:text-white text-sm placeholder:text-[#6e7682] text-[#4b5264] rounded-xl sm:min-w-[300px]
-          "
+          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-pink-200 dark:border-purple-800 bg-transparent font-epilogue dark:text-white text-sm placeholder:text-slate-400 text-slate-700 rounded-xl sm:min-w-[300px] focus:ring-2 focus:ring-pink-300 dark:focus:ring-purple-600 transition-all"
         />
       ) : isCategory ? (
         <select
           required
           value={value}
           onChange={handleChange}
-          className="py-[17px] sm:px-[25px] px-[20px] outline-none border-[1px] border-[#8b8b8b] dark:border-[#3a3a43]  font-epilogue text-black dark:text-white text-sm  rounded-xl sm:min-w-[300px] bg-[#f2f2f2] dark:bg-[#1c1c24]"
+          className="py-[17px] sm:px-[25px] px-[20px] outline-none border-[1px] border-pink-200 dark:border-purple-800 font-epilogue text-slate-800 dark:text-white text-sm rounded-xl sm:min-w-[300px] bg-white dark:bg-slate-800 focus:ring-2 focus:ring-pink-300 dark:focus:ring-purple-600 transition-all"
         >
           <option value="">Select any Category</option>
           <option value="Fundraiser">Fundraiser</option>
@@ -61,18 +52,18 @@ const FormField = ({
           onFocus={(e) =>
             e.target.addEventListener(
               "wheel",
-              function (e) {
-                e.preventDefault();
+              (e) => {
+                e.preventDefault()
               },
-              { passive: false }
+              { passive: false },
             )
           }
-          className=" py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-[#8b8b8b] dark:border-[#3a3a43] bg-transparent font-epilogue  dark:text-white text-sm placeholder:text-[#6e7682] text-[#4b5264] rounded-xl sm:min-w-[300px] 
-          "
+          className="py-[15px] sm:px-[25px] px-[15px] outline-none border-[1px] border-pink-200 dark:border-purple-800 bg-transparent font-epilogue dark:text-white text-sm placeholder:text-slate-400 text-slate-700 rounded-xl sm:min-w-[300px] focus:ring-2 focus:ring-pink-300 dark:focus:ring-purple-600 transition-all"
         />
       )}
     </label>
-  );
-};
+  )
+}
 
-export default FormField;
+export default FormField
+
