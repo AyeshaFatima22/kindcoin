@@ -1,46 +1,34 @@
+# KindCoin
+
 ## Getting Started
 
-Create a project using this example:
+This project KindCoin is a decentralized application (DApp) that helps collect funds while eliminating intermediaries.
+
+### Installation
+
+To set up the project locally, follow these steps:
 
 ```bash
-npx thirdweb create --template vite-javascript-starter
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can start editing the page by modifying `src/main.jsx`. The page auto-updates as you edit the file.
+### Features
+- Fully local setup (No Thirdweb integration)
+- Built using Vite and React
+- Secure and transparent fund collection system
 
-On `src/index.jsx`, you'll find our `ThirdwebProvider` wrapping your app,
-this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
+### Learn More
+To learn more about the technologies used in this project, check out the following resources:
 
-## Environment Variables
+- [Vite Documentation](https://vitejs.dev/guide/) - Learn about Vite features.
+- [React Documentation](https://reactjs.org/) - Learn about React.
 
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
+### Author
+Developed by [Ayesha Fatima](https://github.com/AyeshaFatima22). Contributions and feedback are welcome!
 
-### Deploy to IPFS
+---
 
-Deploy a copy of your application to IPFS using the following command:
-
-```bash
-yarn deploy
-```
-
-## Learn More
-
-To learn more about thirdweb, Vite and React, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb JavaScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
-- [Vite Documentation](https://vitejs.dev/guide/) - learn about Vite features.
-- [React documentation](https://reactjs.org/) - learn React.
-- [Templates](https://thirdweb.com/templates)
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
-
-
-
-this app will help to collect funds by removing the man in the middle.
