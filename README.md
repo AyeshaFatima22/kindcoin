@@ -21,6 +21,7 @@
 - Setting up and managing the **local Hardhat blockchain** for development
 - Debugging **smart contracts** and optimizing Solidity code
 - Ensuring **secure transactions** between users and campaign creators
+- Configuring Metamask to use **local hardhat ETH**.
 
 ## Installation & Setup
 
