@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useStateContext } from "../context"
-import { CustomConnectWallet, ThemeModes } from "./" // Updated to use ThemeModes
+import { CustomConnectWallet, ThemeModes } from "./"
 import { logo, menu, search } from "../assets"
 import { navlinks } from "../constants"
 
@@ -15,28 +15,26 @@ const Navbar = () => {
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
-      <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#f2f2f2] dark:bg-[#1c1c24] rounded-[100px]">
+      <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-white dark:bg-slate-800 rounded-full shadow-soft">
         <input
           type="text"
           placeholder="Search for campaigns"
-          className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-[#4d4d4d] dark:text-white bg-transparent outline-none"
+          className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-slate-400 text-slate-800 dark:text-white bg-transparent outline-none"
         />
 
-        <div className="w-[72px] h-full rounded-[20px] bg-[#03dac5] flex justify-center items-center cursor-pointer">
+        <div className="w-[72px] h-full rounded-full bg-pink-500 dark:bg-purple-500 flex justify-center items-center cursor-pointer hover:bg-pink-600 dark:hover:bg-purple-600 transition-colors">
           <img src={search || "/placeholder.svg"} alt="search" className="w-[15px] h-[15px] object-contain" />
         </div>
       </div>
 
       <div className="sm:flex hidden flex-row justify-end gap-4">
         <CustomConnectWallet />
-
         <ThemeModes />
-
       </div>
 
       {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
-        <div className="w-[40px] h-[40px] rounded-[10px] bg-[#f2f2f2] dark:bg-[#2c2f32] flex justify-center items-center cursor-pointer">
+        <div className="w-[40px] h-[40px] rounded-xl bg-white dark:bg-slate-800 flex justify-center items-center cursor-pointer shadow-soft">
           <img src={logo || "/placeholder.svg"} alt="user" className="w-[60%] h-[60%] object-contain" />
         </div>
 
@@ -48,7 +46,7 @@ const Navbar = () => {
         />
 
         <div
-          className={`absolute top-[60px] right-0 left-0 bg-[#f2f2f2] dark:bg-[#1c1c24] z-10 shadow-secondary py-4 ${
+          className={`absolute top-[60px] right-0 left-0 bg-white dark:bg-slate-800 z-10 shadow-soft py-4 rounded-2xl ${
             !toggleDrawer ? "-translate-y-[100vh]" : "translate-y-0"
           } transition-all duration-700`}
         >
@@ -56,7 +54,7 @@ const Navbar = () => {
             {navlinks.map((link) => (
               <li
                 key={link.name}
-                className={`flex p-4 ${isActive === link.name && "bg-[#e5e5e5] dark:bg-[#3a3a43]"}`}
+                className={`flex p-4 ${isActive === link.name && "bg-pink-50 dark:bg-purple-900"}`}
                 onClick={() => {
                   setIsActive(link.name)
                   setToggleDrawer(false)
@@ -69,8 +67,8 @@ const Navbar = () => {
                   className={`w-[24px] h-[24px] object-contain ${isActive === link.name ? "grayscale-0" : "grayscale"}`}
                 />
                 <p
-                  className={`ml-[20px] font-epilogue font-semibold text-[14px] ${
-                    isActive === link.name ? "text-[#131418] dark:text-white" : "text-[#4d4d4d] dark:text-[#808191]"
+                  className={`ml-[20px] font-quicksand font-semibold text-[14px] ${
+                    isActive === link.name ? "text-pink-600 dark:text-pink-400" : "text-slate-600 dark:text-slate-300"
                   }`}
                 >
                   {link.name}
