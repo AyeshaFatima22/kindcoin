@@ -1,47 +1,86 @@
-## Getting Started
+# KindCoin 
 
-Create a project using this example:
+This project is a **decentralized crowdfunding platform** that removes intermediaries, allowing users to create and fund campaigns directly on the blockchain.  
 
-```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
-```
+## Features  
+✅ **Create Campaigns** – Users can set up fundraising campaigns with a target goal.  
+✅ **Donate Funds** – Contributors can donate ETH to campaigns.  
+✅ **Withdraw Funds** – Campaign creators can withdraw funds once the goal is met.  
+✅ **Blockchain-Powered** – Fully decentralized using **Ethereum & Hardhat**.  
 
-You can start editing the page by modifying `contracts/Contract.sol`.
+---
 
-To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) to learn more.
+## 🛠 Project Setup  
 
-## Building the project
-
-After any changes to the contract, run:
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-to compile your contracts. This will also detect the [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) detected on your contract.
-
-## Deploying Contracts
-
-When you're ready to deploy your contracts, just run one of the following command to deploy you're contracts:
+### 1️⃣ Install Dependencies  
+Navigate to the `web3/` directory and run:  
 
 ```bash
-npm run deploy
-# or
-yarn deploy
+cd web3
+npm install
 ```
 
-## Releasing Contracts
-
-If you want to release a version of your contracts publicly, you can use one of the followings command:
+### 2️⃣ Start Hardhat Local Blockchain  
+Run a local blockchain for development:  
 
 ```bash
-npm run release
-# or
-yarn release
+npx hardhat node
 ```
 
-## Join our Discord!
+### 3️⃣ Deploy Smart Contract  
+Deploy the **CrowdFunding.sol** contract to the local Hardhat network:  
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### 4️⃣ Connect MetaMask to Hardhat Network  
+- Open **MetaMask**  
+- Add a **custom RPC network**:  
+  - **Network Name**: Hardhat  
+  - **RPC URL**: `http://127.0.0.1:8545`  
+  - **Chain ID**: `31337`  
+- Import one of the test accounts displayed in the Hardhat terminal  
+
+### 5️⃣ Test Smart Contract Functions  
+Interact with the contract using Hardhat's console:  
+
+```bash
+npx hardhat console --network localhost
+```
+
+Example commands:  
+
+```javascript
+const Contract = await ethers.getContractFactory("CrowdFunding");
+const contract = await Contract.deploy();
+await contract.deployed();
+console.log("Contract deployed at:", contract.address);
+```
+
+---
+
+## 📂 Directory Structure  
+
+```
+📂 web3/
+ ├── 📄 README.md             # Documentation
+ ├── 📄 hardhat.config.js      # Hardhat configuration
+ ├── 📄 package.json           # Dependencies
+ ├── 📄 package-lock.json      # Lock file
+ ├── 📄 .gitignore             # Ignore unnecessary files
+ ├── 📂 contracts/             # Solidity smart contracts
+ │   └── 📄 CrowdFunding.sol   # Main contract
+ ├── 📂 scripts/               # Deployment scripts
+ │   └── 📄 deploy.js          # Contract deployment script
+ └── 📂 test/                  # Add test cases here (if needed)
+```
+
+---
+
+## 🚀 Future Enhancements  
+🔹 **IPFS Storage** – Store campaign images & data on IPFS  
+🔹 **Multi-Chain Support** – Expand to Polygon, Binance Smart Chain, etc.  
+
+## 🤝 Contributing  
+Feel free to contribute! Fork the repo, create a new branch, and submit a pull request.  
